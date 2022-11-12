@@ -16,6 +16,14 @@ npm run dev
 yarn dev
 ```
 
+If you had Docker installed, you can run the project with Docker:
+
+```bash
+docker build -t user-crud:v1 .
+
+docker run --rm -it -p 8080:3000 --name user-crud user-crud:v1
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # User-CRUD
