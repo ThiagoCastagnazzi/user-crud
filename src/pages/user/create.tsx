@@ -91,7 +91,7 @@ export default function CreateUser() {
           )}
         >
           <Heading size="lg" fontWeight="normal">
-            Criar Usuário
+            Register User
           </Heading>
 
           <Divider my="6" borderColor="gray.700" />
@@ -99,7 +99,7 @@ export default function CreateUser() {
           <VStack spacing="8">
             <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
               <Input
-                label="Nome Completo"
+                label="Full Name"
                 error={errors.name}
                 {...register("name")}
               />
@@ -114,13 +114,13 @@ export default function CreateUser() {
             <SimpleGrid minChildWidth="240px" spacing={["6", "8"]} w="100%">
               <Input
                 type="password"
-                label="Senha"
+                label="Password"
                 error={errors.password}
                 {...register("password")}
               />
               <Input
                 type="password"
-                label="Confirmação de Senha"
+                label="Password Confirmation"
                 error={errors.password_confirmation}
                 {...register("password_confirmation")}
               />
