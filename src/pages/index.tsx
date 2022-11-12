@@ -35,6 +35,11 @@ export default function UserList() {
   const [selectedUsers, setSelectedUsers] = useState<number[]>([]);
 
   async function handleSelectedUsers() {
+    if (selectedUsers.length === 0) {
+      toast.error("No user selected");
+      return;
+    }
+
     await db.users.bulkDelete(selectedUsers);
     setSelectedUsers([]);
     toast.success("Users deleted successfully");
