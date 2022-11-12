@@ -31,15 +31,15 @@ interface CreateUserFormData {
 }
 
 const createUserFormSchema = yup.object().shape({
-  name: yup.string().required("Nome obrigatório"),
-  email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
+  name: yup.string().required("Name is required"),
+  email: yup.string().required("E-mail is required").email("E-mail is invalid"),
   password: yup
     .string()
-    .required("Senha obrigatória")
-    .min(6, "No mínimo 6 caracteres"),
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters"),
   password_confirmation: yup
     .string()
-    .oneOf([null, yup.ref("password")], "As senhas precisam ser iguais"),
+    .oneOf([null, yup.ref("password")], "Passwords must match"),
 });
 
 export default function CreateUser() {
@@ -57,17 +57,20 @@ export default function CreateUser() {
     const users = await db.users.toArray();
 
     if (users.find((user) => user.email === values.email)) {
-      toast.error("E-mail já cadastrado");
+      toast.error("E-mail already exists");
       return;
     }
     try {
       await db.users.add(values);
-      toast.success("Usuário cadastrado com sucesso");
 
-      router.push("/");
+      toast.success("User created successfully");
     } catch (error) {
       console.log(error);
     }
+
+    setTimeout(() => {
+      router.push("/");
+    }, 1000);
   }
 
   return (

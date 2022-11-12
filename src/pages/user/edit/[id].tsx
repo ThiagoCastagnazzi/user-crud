@@ -48,15 +48,15 @@ interface CreateUserFormData {
 }
 
 const createUserFormSchema = yup.object().shape({
-  name: yup.string().required("Nome obrigatório"),
-  email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
+  name: yup.string().required("Name is required"),
+  email: yup.string().required("E-mail is required").email("E-mail is invalid"),
   password: yup
     .string()
-    .required("Senha obrigatória")
-    .min(6, "No mínimo 6 caracteres"),
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters"),
   password_confirmation: yup
     .string()
-    .oneOf([null, yup.ref("password")], "As senhas precisam ser iguais"),
+    .oneOf([null, yup.ref("password")], "Passwords must match"),
 });
 
 export default function User({ id }: IParams) {
@@ -92,9 +92,9 @@ export default function User({ id }: IParams) {
         password: values.password,
       });
 
-      toast.success("Usuário editado com sucesso!");
+      toast.success("User updated successfully");
     } catch (error) {
-      toast.error("Erro ao editar usuário!");
+      toast.error("Failed to update user");
     }
   };
 

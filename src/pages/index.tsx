@@ -37,7 +37,7 @@ export default function UserList() {
   async function handleSelectedUsers() {
     await db.users.bulkDelete(selectedUsers);
     setSelectedUsers([]);
-    toast.success("Usuários excluídos com sucesso");
+    toast.success("Users deleted successfully");
 
     refetch();
   }
