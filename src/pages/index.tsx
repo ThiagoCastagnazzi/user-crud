@@ -53,8 +53,6 @@ export default function UserList() {
     }
   };
 
-  console.info("Users Selected: ", selectedUsers);
-
   return (
     <Box>
       <Header title="Dashboard" />

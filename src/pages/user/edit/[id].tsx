@@ -112,8 +112,7 @@ export default function User({ id }: IParams) {
           bg="gray.800"
           p={["6", "8"]}
           onSubmit={handleSubmit(
-            async (values) => await handleEditUser(values),
-            (e) => console.log(e)
+            async (values) => await handleEditUser(values)
           )}
         >
           <Heading size="lg" fontWeight="normal">
