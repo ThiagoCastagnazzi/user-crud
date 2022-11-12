@@ -20,24 +20,29 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 # User-CRUD
 
-###This is an application for creating user, editing, reading and removing.
+### This is an application for creating user, editing, reading and removing.
 
-###Links
+### Links
 
 [GitHub Repository](https://github.com/ThiagoCastagnazzi/user-crud)
 
 [Deployed App](https://user-crud-seven.vercel.app/)
 
-#Used Techs
+# Used Techs
 
-####React
-####NextJS
-####TypeScript
-####ChakraUI
-####IndexedDB
-####DexieJS
+#### React
 
-##App Images
+#### NextJS
+
+#### TypeScript
+
+#### ChakraUI
+
+#### IndexedDB
+
+#### DexieJS
+
+## App Images
 
 > Dashboard.
 
@@ -51,4 +56,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ![](https://i.imgur.com/V52Uv4q.png)
 
-###End
+### End
