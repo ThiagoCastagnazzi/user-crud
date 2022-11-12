@@ -26,6 +26,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { Input } from "../../../components/Form/Input";
 import Link from "next/link";
 
@@ -62,6 +63,8 @@ const createUserFormSchema = yup.object().shape({
 export default function User({ id }: IParams) {
   const [user, setUser] = useState<User>();
 
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -93,6 +96,10 @@ export default function User({ id }: IParams) {
       });
 
       toast.success("User updated successfully");
+
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       toast.error("Failed to update user");
     }
